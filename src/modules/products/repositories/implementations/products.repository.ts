@@ -1,6 +1,7 @@
 import { Product } from '@prisma/client';
 import { PrismaService } from 'src/prisma/prisma.service';
 import { CreateProductDTO } from '../../dtos/create-product.dto';
+import { UpdateProductDTO } from '../../dtos/update-product.dto';
 import { IProductsRepository } from '../products.repository';
 
 export class ProductsRepository implements IProductsRepository {
@@ -23,6 +24,15 @@ export class ProductsRepository implements IProductsRepository {
   async findById(id: string): Promise<Product> {
     const product = await this.prisma.product.findFirst({
       where: { id },
+    });
+
+    return product;
+  }
+
+  async updateById(id: string, data: UpdateProductDTO): Promise<Product> {
+    const product = await this.prisma.product.update({
+      where: { id },
+      data,
     });
 
     return product;
