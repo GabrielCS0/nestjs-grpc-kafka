@@ -13,18 +13,23 @@ import { FindProductByIdService } from './useCases/findProductById/find-product-
 import { UpdateProductController } from './useCases/updateProduct/update-product.controller';
 import { UpdateProductService } from './useCases/updateProduct/update-product.service';
 
+import { RemoveProductController } from './useCases/removeProduct/remove-product.controller';
+import { RemoveProductService } from './useCases/removeProduct/remove-product.service';
+
 @Module({
   controllers: [
     CreateProductController,
     FindAllProductsController,
     FindProductByIdController,
     UpdateProductController,
+    RemoveProductController,
   ],
   providers: [
     CreateProductService,
     FindAllProductsService,
     FindProductByIdService,
     UpdateProductService,
+    RemoveProductService,
     {
       provide: 'ProductsRepository',
       inject: [ProductsRepository],
