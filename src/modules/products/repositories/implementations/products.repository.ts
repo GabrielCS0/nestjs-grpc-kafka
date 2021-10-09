@@ -19,4 +19,12 @@ export class ProductsRepository implements IProductsRepository {
     const products = await this.prisma.product.findMany();
     return products;
   }
+
+  async findById(id: string): Promise<Product> {
+    const product = await this.prisma.product.findFirst({
+      where: { id },
+    });
+
+    return product;
+  }
 }

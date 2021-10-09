@@ -4,12 +4,19 @@ import { CreateProductController } from './useCases/createProduct/create.product
 import { CreateProductService } from './useCases/createProduct/create.product.service';
 import { FindAllProductsController } from './useCases/findAllProducts/find-all-products.controller';
 import { FindAllProductsService } from './useCases/findAllProducts/find-all-products.service';
+import { FindProductByIdController } from './useCases/findProductById/find-product-by-id.controller';
+import { FindProductByIdService } from './useCases/findProductById/find-product-by-id.service';
 
 @Module({
-  controllers: [CreateProductController, FindAllProductsController],
+  controllers: [
+    CreateProductController,
+    FindAllProductsController,
+    FindProductByIdController,
+  ],
   providers: [
     CreateProductService,
     FindAllProductsService,
+    FindProductByIdService,
     {
       provide: 'ProductsRepository',
       inject: [ProductsRepository],

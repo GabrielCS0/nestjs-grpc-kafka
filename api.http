@@ -9,3 +9,6 @@ content-type: application/json
 
 ### Get all products
 GET http://localhost:3000/products
+
+### Get product by id
+GET http://localhost:3000/products/3aab2b37-f308-4322-bd52-1f9032471558
