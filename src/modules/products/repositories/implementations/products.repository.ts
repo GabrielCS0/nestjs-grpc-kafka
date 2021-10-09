@@ -1,6 +1,6 @@
 import { Product } from '@prisma/client';
 import { PrismaService } from 'src/prisma/prisma.service';
-import { CreateProductDTO } from '../../dtos/create.product.dto';
+import { CreateProductDTO } from '../../dtos/create-product.dto';
 import { IProductsRepository } from '../products.repository';
 
 export class ProductsRepository implements IProductsRepository {
