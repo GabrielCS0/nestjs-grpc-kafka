@@ -4,6 +4,7 @@ package product;
 
 service ProductService {
   rpc Create(ProductRequest) returns (ProductResponse) {}
+  rpc Update(ProductRequestWithId) returns (ProductResponse) {}
 }
 
 message ProductRequest {
@@ -17,4 +18,10 @@ message ProductResponse {
   float price = 3;
   string createdAt = 4;
   string updatedAt = 5;
+}
+
+message ProductRequestWithId {
+  string id = 1;
+  string name = 2;
+  float price = 3;
 }

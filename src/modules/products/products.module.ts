@@ -16,6 +16,9 @@ import { UpdateProductService } from './useCases/updateProduct/update-product.se
 import { RemoveProductController } from './useCases/removeProduct/remove-product.controller';
 import { RemoveProductService } from './useCases/removeProduct/remove-product.service';
 
+import { ProductGrpcServerController } from './grpcServer/product-grpc-server.controller';
+import { UpdateProductGrpcServerController } from './grpcServer/update-product-grpc-server.controller';
+
 @Module({
   controllers: [
     CreateProductController,
@@ -23,6 +26,9 @@ import { RemoveProductService } from './useCases/removeProduct/remove-product.se
     FindProductByIdController,
     UpdateProductController,
     RemoveProductController,
+
+    ProductGrpcServerController,
+    UpdateProductGrpcServerController,
   ],
   providers: [
     CreateProductService,

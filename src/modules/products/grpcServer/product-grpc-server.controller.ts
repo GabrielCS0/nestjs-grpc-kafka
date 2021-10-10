@@ -1,7 +1,8 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { Controller } from '@nestjs/common';
 import { GrpcMethod } from '@nestjs/microservices';
 import { Product } from '@prisma/client';
-import { Metadata, ServerUnaryCall } from 'grpc';
+import { Metadata, ServerUnaryCall, status } from 'grpc';
 import { CreateProductDTO } from '../dtos/create-product.dto';
 import { CreateProductService } from '../useCases/createProduct/create-product.service';
 
@@ -9,13 +10,13 @@ import { CreateProductService } from '../useCases/createProduct/create-product.s
 export class ProductGrpcServerController {
   constructor(private createProductService: CreateProductService) {}
 
-  @GrpcMethod('ProductService', 'Create')
-  create(
+  @GrpcMethod('ProductService')
+  async create(
     data: CreateProductDTO,
     metadata: Metadata,
     call: ServerUnaryCall<CreateProductDTO>,
   ): Promise<Product> {
-    const product = this.createProductService.execute(data);
+    const product = await this.createProductService.execute(data);
     return product;
   }
 }
