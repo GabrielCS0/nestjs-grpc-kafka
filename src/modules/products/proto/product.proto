@@ -5,6 +5,7 @@ package product;
 service ProductService {
   rpc Create(ProductRequest) returns (ProductResponse) {}
   rpc Update(ProductRequestWithId) returns (ProductResponse) {}
+  rpc FindOne(ProductIdRequest) returns (ProductResponse) {}
 }
 
 message ProductRequest {
@@ -24,4 +25,8 @@ message ProductRequestWithId {
   string id = 1;
   string name = 2;
   float price = 3;
+}
+
+message ProductIdRequest {
+  string id = 1;
 }
