@@ -1,11 +1,14 @@
 syntax = "proto3";
 
+import "google/protobuf/empty.proto";
+
 package product;
 
 service ProductService {
   rpc Create(ProductRequest) returns (ProductResponse) {}
   rpc Update(ProductRequestWithId) returns (ProductResponse) {}
   rpc FindOne(ProductIdRequest) returns (ProductResponse) {}
+  rpc FindAll(google.protobuf.Empty) returns (ProductsResponse) {}
 }
 
 message ProductRequest {
@@ -29,4 +32,8 @@ message ProductRequestWithId {
 
 message ProductIdRequest {
   string id = 1;
+}
+
+message ProductsResponse {
+  repeated ProductResponse data = 1;
 }

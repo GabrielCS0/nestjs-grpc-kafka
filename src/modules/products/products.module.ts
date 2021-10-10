@@ -19,6 +19,7 @@ import { RemoveProductService } from './useCases/removeProduct/remove-product.se
 import { ProductGrpcServerController } from './grpcServer/product-grpc-server.controller';
 import { UpdateProductGrpcServerController } from './grpcServer/update-product-grpc-server.controller';
 import { FindOneProductGrpcServerController } from './grpcServer/find-one-product-grpc-server.controller';
+import { FindAllProductsGrpcServerController } from './grpcServer/find-all-products-grpc-server.controller';
 
 @Module({
   controllers: [
@@ -31,6 +32,7 @@ import { FindOneProductGrpcServerController } from './grpcServer/find-one-produc
     ProductGrpcServerController,
     UpdateProductGrpcServerController,
     FindOneProductGrpcServerController,
+    FindAllProductsGrpcServerController,
   ],
   providers: [
     CreateProductService,
