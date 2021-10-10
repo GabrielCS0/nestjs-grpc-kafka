@@ -29,9 +29,9 @@ export class ProductsRepository implements IProductsRepository {
     return product;
   }
 
-  async updateById(id: string, data: UpdateProductDTO): Promise<Product> {
+  async updateById(data: UpdateProductDTO): Promise<Product> {
     const product = await this.prisma.product.update({
-      where: { id },
+      where: { id: data.id },
       data,
     });
 

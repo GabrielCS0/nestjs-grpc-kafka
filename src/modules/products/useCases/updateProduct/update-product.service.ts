@@ -11,12 +11,12 @@ export class UpdateProductService {
     private productsRepository: IProductsRepository,
   ) {}
 
-  async execute(id: string, data: UpdateProductDTO): Promise<Product> {
-    const productExists = await this.productsRepository.findById(id);
+  async execute(data: UpdateProductDTO): Promise<Product> {
+    const productExists = await this.productsRepository.findById(data.id);
 
     if (!productExists) throw new ProductNotFoundError();
 
-    const updatedProduct = this.productsRepository.updateById(id, data);
+    const updatedProduct = this.productsRepository.updateById(data);
 
     return updatedProduct;
   }
