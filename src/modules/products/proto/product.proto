@@ -9,6 +9,7 @@ service ProductService {
   rpc Update(ProductRequestWithId) returns (ProductResponse) {}
   rpc FindOne(ProductIdRequest) returns (ProductResponse) {}
   rpc FindAll(google.protobuf.Empty) returns (ProductsResponse) {}
+  rpc Delete(ProductIdRequest) returns (google.protobuf.Empty) {}
 }
 
 message ProductRequest {
@@ -30,10 +31,6 @@ message ProductRequestWithId {
   float price = 3;
 }
 
-message ProductIdRequest {
-  string id = 1;
-}
+message ProductIdRequest { string id = 1; }
 
-message ProductsResponse {
-  repeated ProductResponse data = 1;
-}
+message ProductsResponse { repeated ProductResponse data = 1; }
