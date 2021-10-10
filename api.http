@@ -3,8 +3,8 @@ POST http://localhost:3000/products
 content-type: application/json
 
 {
-  "name": "Test 3",
-  "price": 3
+  "name": "Test",
+  "price": 1
 }
 
 ### Get all products
@@ -14,13 +14,13 @@ GET http://localhost:3000/products
 GET http://localhost:3000/products/3aab2b37-f308-4322-bd52-1f9032471558
 
 ### Update a product
-PUT http://localhost:3000/products/8621c963-0831-4c63-9c8a-d9ceae0ee789
+PUT http://localhost:3000/products/01330f4f-a3c4-4825-b01b-42e7082c7852
 content-type: application/json
 
 {
     "name": "Updated Product",
-    "price": 3.03
+    "price": 2.02
 }
 
 ### Delete a product
-DELETE http://localhost:3000/products/8621c963-0831-4c63-9c8a-d9ceae0ee789
+DELETE http://localhost:3000/products/01330f4f-a3c4-4825-b01b-42e7082c7852
