@@ -18,6 +18,18 @@ async function bootstrap() {
     },
   });
 
+  app.connectMicroservice<MicroserviceOptions>({
+    transport: Transport.KAFKA,
+    options: {
+      client: {
+        brokers: ['host.docker.internal:9094'],
+      },
+      consumer: {
+        groupId: 'nest-group-' + Math.random(),
+      },
+    },
+  });
+
   await app.startAllMicroservices();
   await app.listen(3000);
 }

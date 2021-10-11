@@ -23,4 +23,12 @@ content-type: application/json
 }
 
 ### Delete a product
-DELETE http://localhost:3000/products/01330f4f-a3c4-4825-b01b-42e7082c7852
+DELETE http://localhost:3000/products/3aab2b37-f308-4322-bd52-1f9032471558
+
+###
+POST http://localhost:3000/kafka-producers
+Content-type: application/json
+
+{
+    "name": "Test"
+}
