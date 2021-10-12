@@ -41,7 +41,7 @@ Technologies that I used to develop this API:
 
 ## 💻 Getting started
 
-You can download the [REST Client](https://marketplace.visualstudio.com/items?itemName=humao.rest-client) Extension for Visual Studio Code and test the API in the [api.http](https://github.com/GabrielCordeiroDev/ecommerce-api/blob/main/api.http) file
+You can download the [REST Client](https://marketplace.visualstudio.com/items?itemName=humao.rest-client) Extension for Visual Studio Code and test the API in the [api.http](https://github.com/GabrielCordeiroDev/nestjs-grpc-kafka/blob/main/api.http) file
 
 **Clone the project and access the folder**
 
